@@ -1,0 +1,31 @@
+<!--
+Beta_Build-0.2;
+Compile Date: 19/1/21;
+Days working on build: 2;
+© Pieter Edwards 2021, this is a BETA build not intended for public distribution;
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ride Simulator | Beta Build v0.2</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link href="CSS/style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">  
+  </head>
+  <body>
+    <iframe id="simContainer" src="sim.html" title="Ride simulation" allowfullscreen>Your browser does not support iframe and so is not supported by this Engine :(</iframe>
+    <script>
+      function resizeSimContainer(){
+	    var con=document.getElementById('simContainer');
+        con.style.height=(con.offsetWidth/1080*650)+"px";
+      };
+
+      setTimeout(resizeSimContainer,1);
+
+      document.getElementsByTagName("BODY")[0].onresize = function() {
+	      resizeSimContainer();
+      };
+    </script>
+  </body>
+</html>
