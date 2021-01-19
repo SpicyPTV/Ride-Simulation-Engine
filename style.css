@@ -1,0 +1,18 @@
+/*
+Beta_Build-0.2;
+Compile Date: 19/1/21;
+Days working on build: 2;
+© Pieter Edwards 2021, this is a BETA build not intended for public distribution;
+*/
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#simContainer {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  height: 90vh;
+  width: 80vw;
+}
