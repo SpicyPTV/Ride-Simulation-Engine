@@ -1,7 +1,7 @@
 <!--
 Beta_Build-0.2;
-Compile Date: 19/1/21;
-Days working on build: 2;
+Compile Date: 24/1/21;
+Days working on build: 7;
 © Pieter Edwards 2021, this is a BETA build not intended for public distribution;
 -->
 <!DOCTYPE html>
@@ -11,20 +11,34 @@ Days working on build: 2;
     <title>Ride Simulator | Beta Build v0.2</title>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <link href="CSS/style.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">  
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
   </head>
   <body>
+    <!-- Frame for Sim -->
     <iframe id="simContainer" src="sim.html" title="Ride simulation" allowfullscreen>Your browser does not support iframe and so is not supported by this Engine :(</iframe>
+    <!-- Control Pannel Below Sim Container-->
+    <div id="controlPannel">
+      <!-- Expand Icon -->
+      <svg viewBox="0 0 448 512" width="30" title="expand" id="expand" onclick="document.getElementById('simContainer').requestFullscreen(); return false;">
+        <path d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z" />
+      </svg>
+    </div>
+    <!-- Scripts for resizing frame and control pannel -->
     <script>
-      function resizeSimContainer(){
-	    var con=document.getElementById('simContainer');
+      // When called resizes Sim Container and Control Pannel
+      function resizeSim(){
+	var con=document.getElementById('simContainer');
+        var conp=document.getElementById('controlPannel');
+        var icon1=document.getElementById('expand');
         con.style.height=(con.offsetWidth/1080*650)+"px";
+        conp.style.height=(con.offsetWidth/1080*35)+"px";
+        icon1.style.height=(con.offsetWidth/1080*35)+"px";
       };
-
-      setTimeout(resizeSimContainer,1);
-
+      // Sets the delay for resizing
+      setTimeout(resizeSim,1);
+      // When the window / tab size is changed calls functions
       document.getElementsByTagName("BODY")[0].onresize = function() {
-	      resizeSimContainer();
+	 resizeSim();
       };
     </script>
   </body>
