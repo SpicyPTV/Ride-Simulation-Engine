@@ -1,9 +1,11 @@
 /*
 Beta_Build-0.2;
-Compile Date: 24/1/21;
-Days working on build: 7;
+Compile Date: 25/1/21;
+Days working on build: 8;
 © Pieter Edwards 2021, this is a BETA build not intended for public distribution;
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 
 #simContainer {
   position: relative;
@@ -15,20 +17,31 @@ Days working on build: 7;
 
 #controlPannel {
   position: relative;
-  left: 55vw;
+  left: 54.5vw;
   background-color: #D3D3D3;
   width: 35vw;
   height: 5vh;
 }
 
-#expand {
-  position: relative;
+#controlOption {
+  position: absolute;
   top: 50%;
   left: 1vw;
   transform: translate(0, -50%);
 }
 
-#expand:hover {
-  color: white;
+#controlOption:hover {
   cursor: pointer;
 }
+
+#controlOption2 {
+  position: absolute;
+  top: 50%;
+  left: 4vw;
+  transform: translate(0, -50%);
+}
+
+#controlOption2:hover {
+  cursor: pointer;
+}
+
